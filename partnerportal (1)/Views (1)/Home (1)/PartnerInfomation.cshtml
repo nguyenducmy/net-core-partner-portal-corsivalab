@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Partner Info Page";
+
+}
+
+<style>
+ 
+/* Responsive */
+.hr {
+    height: 2px;
+    margin: 0px;
+    background: #DDDDDD;
+}
+.info ul {
+    display:block;
+}
+.info ul li{
+    list-style:none;
+    float:none;
+
+}
+.info ul li{
+    font-size:17px;
+
+}
+
+</style>
+ <div id="containerbody">
+     <br /><br />
+     <h3>General Infomation</h3>
+     <div class="hr"></div>
+     <br />
+     <div class="info">
+         <ul>
+             <br />
+             <li>Username  : &ensp;@ViewBag.Username</li>
+             <br />
+             <li>Email  : &ensp;@ViewBag.Email</li>
+             <br />
+             <li>Phone  : &ensp;@ViewBag.Phone</li>
+             <br />
+             <li>Remarks  : &ensp;@ViewBag.Remarks</li>
+         </ul>
+     </div>
+     <br /><br />
+     
+     <div class="hr"></div>
+     
+     <!--End Home Page-->
+ </div>
+
+

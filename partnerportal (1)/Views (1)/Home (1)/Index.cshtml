@@ -1,0 +1,203 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+<style>
+ #containerbody ul li{
+     list-style:none;
+     float:left;
+     width:30%;
+ }
+ .a{
+   text-align:center;height:100px ;width:350px;
+ }
+ #launcher{
+     background-color:#edf1f5;
+ }
+ .b{
+     margin-bottom:120px;
+}
+ .c{
+     background-color:#edf1f5;
+ }
+/* Responsive */
+
+@@media only screen and (max-width: 960px){
+    .b ul li{
+        width: 90% !important;
+        margin-bottom:50px !important;
+    }
+    .a {
+        margin:auto;
+    }
+}
+
+@@media only screen and (max-width: 480px){
+    .b ul li{
+        margin-bottom:60px;
+    }
+    .c{
+       
+        float:left;
+        margin-bottom:40px;
+        width:100%;
+    }
+    .c h3{
+        font-size:17px;
+    }
+   
+}
+
+
+</style>
+ <div id="containerbody">
+     <!--Begin Home Page-->
+
+     <div id="launcher"><h3>Launcher</h3></div>
+     <div style="text-align:center"><h1>Welcome to Corsiva Toolkit - Launcher</h1></div>
+     <br /><br />
+     <div class= "b">
+        <ul>
+            <li><div class="a"><img style="height:50px;" src="~/images/ClickUp.jpg"/><p><h4><a href="https://clickup.com/">ClickUp</a></h4></p></div></li>
+            <li><div class="a"><img style="height:50px;" src="~/images/GoogleDoc.jpg"/><p><h4><a href="https://docs.google.com/document/u/0/">Google Doc</a></h4></p></div></li>
+            <li><div class="a"><img style="height:50px;" src="~/images/GoogleDrive.jpg"/><p><h4><a href="https://drive.google.com/drive/">Goodle Drive</a></h4></p></div></li>
+        </ul>
+     </div>
+      <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/microsoft-office.jpg"/><p><h4><a href="https://www.office.com/">Microsoft Office</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/corsiva.jpg"/><p><h4><a href="https://corsivacdncontent.blob.core.windows.net/corsivatoolkit/Corsiva%20Lab_Handbook%20V3.pdf">Employee Handbook</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/corsiva.jpg"/><p><h4><a href="https://woocommerce-ninjavan-admin.corsivalab.com/">Ninjavan Admin</a></h4></p></div></li>
+        </ul>
+     </div>
+     <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/corsiva.jpg"/><p><h4><a href="https://toolkit.corsivalab.com/index.aspx">Corsiva Lab Videos</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/corsiva.jpg"/><p><h4><a href="https://webmaster.corsivalab.com/">Maintenance</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/corsiva.jpg"/><p><h4><a href="https://docs.google.com/spreadsheets/d/1wIr7DU9Ulz7gJlDujcKwRe1tFGpYaCE6vAOc9RdgMUI/edit#gid=0">Password Bank</a></h4></p></div></li>
+        </ul>
+     </div>
+     
+     <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/elepass.jpg"/><p><h4><a href="https://elepass.io/">Elepass</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/HubSpot.jpg"/><p><h4><a href="https://www.hubspot.com/">HubSpot</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/corsiva.jpg"/><p><h4><a href="https://toolkit.corsivalab.com/index.aspx">CRUD Assistant</a></h4></p></div></li>
+        </ul>
+     </div>
+     <br /><br />
+     <div class="c"><h3>Corsiva Lab</h3></div>
+     <br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/facebook.jpg"/><p><h4><a href="https://www.facebook.com/corsivalab/">Facebook</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/instagram.jpg"/><p><h4><a href="https://www.instagram.com/corsivalab/">Instagram</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/linkedin.jpg"/><p><h4><a href="https://www.linkedin.com/company/corsiva-lab/">Linkedln</a></h4></p></div></li>
+        </ul>
+     </div>
+      <br /><br />
+     <div class="c"><h3>Communication Tools</h3></div>
+     <br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/Whatsapp (1).jpg"/><p><h4><a href="https://web.whatsapp.com/">Whatsapp</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/Zoho.jpg"/><p><h4><a href="https://www.zoho.com/">Zoho</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/RoundCube.jpg"/><p><h4><a href="https://webmail.corsivalab.space/">RoundCube</a></h4></p></div></li>
+        </ul>
+     </div>
+     <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/Slack.jpg"/><p><h4><a href="https://corsivalab.slack.com/">Slack</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/discord.jpg"/><p><h4><a href="https://discord.com/">Discord</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/meet.jpg"/><p><h4><a href="https://meet.google.com/">Google Meet</a></h4></p></div></li>
+        </ul>
+     </div>
+      <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/skype.jpg"/><p><h4><a href="https://www.skype.com/en/get-skype/">Skype</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/ringover.jpg"/><p><h4><a href="https://myringover.com/">Ringover</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/ringover.jpg"/><p><h4><a href="https://auth.ringover.com/oauth2/login">Ringover Admin</a></h4></p></div></li>
+        </ul>
+     </div>
+     <!--Developer Tools & Servers-->
+     <br /><br />
+     <div class="c"><h3>Developer Tools & Servers</h3></div>
+     <br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/Windows-Azure-DevOps.jpg"/><p><h4><a href="https://azure.microsoft.com/en-us/services/devops/">Azure DevOps</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/vodien.jpg"/><p><h4><a href="https://www.vodien.com/">Vodien</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/dreamscape.jpg"/><p><h4><a href="https://reseller.ds.network/home/login/">DreamScape</a></h4></p></div></li>
+        </ul>
+     </div>
+     <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/Sql.jpg"/><p><h4><a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15">SQL SMS</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/VisualStudio.jpg"/><p><h4><a href="https://visualstudio.microsoft.com/vs/community/">Visual Studio</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/a2-hosting.jpg"/><p><h4><a href="https://www.a2hosting.com/">A2 hosting-Gold(Demo XYZ)</a></h4></p></div></li>
+        </ul>
+     </div>
+      <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/Amazon-AWS.jpg"/><p><h4><a href="https://aws.amazon.com/">Amazon AWS</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/Bitbucket.jpg"/><p><h4><a href="https://bitbucket.org/product/">Bitbucket</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/gocloud.jpg"/><p><h4><a href="https://partner.gocloudeasy.com/">Go Cloud Easy</a></h4></p></div></li>
+        </ul>
+     </div>
+      <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/hostgator.jpg"/><p><h4><a href="https://www.hostgator.com/">Hostgator</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/a2-hosting.jpg"/><p><h4><a href="https://www.a2hosting.com/">A2 hosting-Silver(Pilot XYZ)</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/googlecloud.jpg"/><p><h4><a href="https://cloud.google.com/">Google Cloud</a></h4></p></div></li>
+        </ul>
+     </div>
+  <br /><br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/MicrosoftAzure.jpg"/><p><h4><a href="https://login.microsoftonline.com/organizations/oauth2/v2.0/authorize?redirect_uri=https%3A%2F%2Fportal.azure.com%2Fsignin%2Findex%2F&response_type=code%20id_token&scope=https%3A%2F%2Fmanagement.core.windows.net%2F%2Fuser_impersonation%20openid%20email%20profile&state=OpenIdConnect.AuthenticationProperties%3DKg0LqMw5rOy3z4BUSRcrcC6BsO6vQRVX02kvbSgfVFpDSbRglXfOaeiB1ra7AovrAHnUYxwYrKWAnLnNYHNXxNPXVikuQC85k-JUHdU4o_J8HdKF-NCx-vH_XIPvAyUxRMwGuXVetbffcQEJRED2jniNHsHTLeG_FMuRLKMEz0lLfxVHVA8j4ccYmRlOugbFUCbLI7RA7k0kpG7uC9GkVOLGU5vaFnSbPxSorX5k-m746mE1xcYi3Xe_To9ylsWPmVGZuH-H_15Tt5UD0ahVpcgpDY6kQDP0iYMRnDH7WUe-oSiWnrqWSDRcH_sYnHrztJoPu-6EmaTGTBwiDtgsEZYfDMjPvjVtGizWAeJ80Ka92Jzg0IctdCZbvUKKhH2IkHv7fFu8BrfCm1bTtlmBsQ&response_mode=form_post&nonce=637769941403684063.NDNiYjM0NzUtZjQwNS00OGQ1LTkyNmUtMDIyNzZjZDlhMjVhMmM1YzYxMGItMjBkMy00ZTRjLThkOWMtMWNmYjRkZjY0ZWE3&client_id=c44b4083-3bb0-49c1-b47d-974e53cbdf3c&site_id=501430&client-request-id=dadefd74-62c6-41ec-be1d-29d77a1567d2&x-client-SKU=ID_NET472&x-client-ver=6.11.0.0">
+             Microsoft Azure</a></h4></p></div></li>
+         </ul>
+     </div>
+      <!--Designer Tools-->
+     <br /><br />
+     <div class="c"><h3>Designer Tools</h3></div>
+     <br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/Adobe.jpg"/><p><h4><a href="https://www.adobe.com/sea/creativecloud/desktop-app.html">Adobe</a></h4></p></div></li>
+        </ul>
+     </div>
+       <!--Finance and People Support-->
+     <br /><br />
+     <div class="c"><h3>Finance and People Support</h3></div>
+     <br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/xero.jpg"/><p><h4><a href="https://www.xero.com/">Xero</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/peppol.jpg"/><p><h4><a href="https://directory.peppol.eu/public">PEPPOL</a></h4></p></div></li>
+        </ul>
+     </div>
+         <!--Mobile Apps-->
+     <br /><br />
+     <div class="c"><h3>Mobile Apps</h3></div>
+     <br />
+     <div class= "b">
+         <ul>
+             <li><div class="a"><img style="height:50px;" src="~/images/appledev.jpg"/><p><h4><a href="https://developer.apple.com/">Apple Developer</a></h4></p></div></li>
+             <li><div class="a"><img style="height:50px;" src="~/images/googleplay.jpg"/><p><h4><a href="https://play.google.com/console/u/0/signup">Google Play Console</a></h4></p></div></li>
+        </ul>
+     </div>
+    <br />
+    <br />
+     
+     <!--End Home Page-->
+ </div>

@@ -1,0 +1,90 @@
+﻿@model ClmLeadsStatusLogsToCorsiva
+@{
+    ViewData["Title"] = "Update Lead Status";
+
+}
+
+		<!-- Bootstrap Date-Picker Plugin -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<style>
+ 
+/* Responsive */
+.hr {
+    height: 2px;
+    margin: 0px;
+    background: #DDDDDD;
+}
+.info ul {
+    display:block;
+}
+.info ul li{
+    list-style:none;
+    float:none;
+
+}
+#addlead{
+    width:70%;
+    margin:auto;
+}
+#addlead fieldset input{
+    border-radius: 5px;
+}
+#addlead button{
+    background-color:rgba(40,57,101,.9);
+    border-radius: 5px;
+}
+
+.form-group-a{
+    width:40%;
+    float:left;
+   
+}
+#datefrom li{
+    list-style:none;
+}
+#elementId{
+    background-color:rgba(40,57,101,.9);
+    color:white;
+}
+</style>
+ <div id="containerbody">
+     <h3>Update Leads Status</h3>
+     <!--Start page-->
+     <br />
+     <a id="updatemessage">@ViewBag.UpdateStatus</a>
+      <br />
+     <form id="addlead" asp-action="UpdateLeadStatusAction" asp-controller="Home" method="post">
+     <br />
+        <fieldset class="form-group">
+            <input type="text" class="form-control" id="formGroupInput1" name="LeadEmail"placeholder="Enter Leads Email to update">
+        </fieldset><br />
+       
+            <select id="elementId"class="dropdown-list" asp-for="StatusCode">
+                <option>--Type Of Brochure--</option>
+                <option value="New">1 - New</option>
+                <option value="Approached">2 - Approached</option>
+                <option value="Interested and closed">3- Interested and closed</option>
+                <option value="Not interested">4- Not interested</option>
+            </select>
+      
+        <br /><br />
+         <div>
+           <textarea id="remarks" style="width:60%"name="Message"placeholder="  Message" style="text-align:left;"rows="2" cols="80"></textarea>
+        </div>
+        <br /><br />
+        
+        
+        <button style="float:left;width:50%"type="submit" class="btn btn-success">Submit</button>
+    </form>
+     <!--End Home Page-->
+ </div>
+
+ <script>
+     var mess = document.getElementById("updatemessage").innerHTML;
+if(mess == 'Update Status Successfully'){
+   	document.getElementById("updatemessage").style.color ='green';
+}else{
+    document.getElementById("updatemessage").style.color ='red';
+}
+ </script>

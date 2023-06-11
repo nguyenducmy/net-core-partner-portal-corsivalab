@@ -1,0 +1,56 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Show Selected SolutionBrochures Page";
+
+}
+<style>
+ 
+/* Responsive */
+.hr {
+    height: 2px;
+    margin: 0px;
+    background: #DDDDDD;
+}
+.info ul {
+    display:block;
+}
+.info ul li{
+    list-style:none;
+    float:none;
+
+}
+  #containerbody embed{
+        min-height:805px;
+        width:100%;
+        margintop:20px;
+        
+    }
+#staffCorsiva{
+width:100%;
+}
+#staffCorsiva thead tr{
+    background-color:rgba(40,57,101,.9);
+    color:white;
+    height:25px;
+}
+#staffCorsiva tbody tr{
+    margin-bottom: 10px;
+    border-bottom : 1px solid;
+}
+#partner{
+    width:100%;
+}
+#partner thead tr{
+    height:25px;
+    background-color:rgba(40,57,101,.9);
+    color:white;
+}
+#partner tbody tr{
+    margin-bottom: 10px;
+    border-bottom : 1px solid;
+}
+
+</style>
+<div id="containerbody">
+    <embed src="@ViewBag.File"/>
+</div>

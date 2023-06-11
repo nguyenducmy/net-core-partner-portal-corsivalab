@@ -1,0 +1,193 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "SolutionBrochures Page";
+
+}
+<style>
+ 
+/* Responsive */
+.hr {
+    height: 2px;
+    margin: 0px;
+    background: #DDDDDD;
+}
+.info ul {
+    display:block;
+}
+.info ul li{
+    list-style:none;
+    float:none;
+
+}
+  #containerbody embed{
+        min-height:805px;
+        width:100%;
+        margintop:20px;
+        
+    }
+#staffCorsiva{
+width:100%;
+}
+#staffCorsiva thead tr{
+    background-color:rgba(40,57,101,.9);
+    color:white;
+    height:25px;
+}
+#staffCorsiva tbody tr{
+    margin-bottom: 10px;
+    border-bottom : 1px solid;
+}
+#partner{
+    width:100%;
+}
+#partner thead tr{
+    height:25px;
+    background-color:rgba(40,57,101,.9);
+    color:white;
+}
+#partner tbody tr{
+    margin-bottom: 10px;
+    border-bottom : 1px solid;
+}
+
+</style>
+ <div id="containerbody">
+     <h3>Solution Brochures</h3>
+     <a href="@Url.Action("UploadSolutionBrochures", "Home")"><i class="fa fa-edit"></i>     Upload Latest Solution Brochure</a>
+     <br />
+     <div style="display:none">
+         @ViewBag.BrochureList
+     </div>
+     <br/>
+     <h3>Staff Corsiva</h3>
+     <form asp-action="SelectedSolutionBrochureAction" asp-controller="Home" method="post">
+    <table id="staffCorsiva">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title of Brochure</th>
+            <th>Type Of Brochure</th>
+            <th>Version Number</th>
+            <th>Date Of Brochure</th>
+            <th>Show/Delete</th>
+        </tr>
+    </thead>
+    <tbody style="border:1px solid">
+        <tr>
+            <td><input type='hidden'id='idstaff'class='idstaff'style='' name ='idstaff'value=''/></td>
+            <td>1111111</td>
+            <td>2111111111111111</td>
+            <td>31111111111111111</td>
+            <td>411111111111111</td>
+            <td><button type="submit" id='idstaffbutton' class="btn btn-warning">Show</button><button type="button" class="btn btn-primary">Delete</button></td>
+        </tr>
+         <tr>
+            <td><input type='hidden'id='idstaff'class='idstaff'style='' name ='idstaff'value=''/></td>
+            <td>22222</td>
+            <td>222222</td>
+            <td>333333</td>
+            <td>44444444</td>
+            <td><button type="submit"  class="btn btn-warning">Show</button><button type="button" class="btn btn-primary">Delete</button></td>
+        </tr>
+         <tr>
+            <td><input type='hidden'class='idstaff'style='' name ='idstaff'value=''/></td>
+            <td>44444</td>
+            <td>44444</td>
+            <td>44444444444</td>
+            <td>444444444444</td>
+            <td><button type="submit" class="btn btn-warning">Show</button><button type="button" class="btn btn-primary">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</form>
+<br/>
+<h3>Partner</h3>
+<form asp-action="SelectedSolutionBrochureAction" asp-controller="Home" method="post">
+    <table id="partner">
+    <thead style="width:100%">
+        <tr>
+            <th></th>
+            <th>Title of Brochure</th>
+            <th>Type Of Brochure</th>
+            <th>Version Number</th>
+            <th>Date Of Brochure</th>
+            <th>Show/Delete</th>
+        </tr>
+    </thead>
+    <tbody id="partnerbody" style="border:1px solid">
+        @foreach(var item in ViewBag.BrochureList)
+        {
+        <tr>
+            <td><input type='hidden' class='idstaff' style='' name ='idstaff'/></td>
+            <td>@item.TitleOfBrochure</td>
+            <td>@item.TypeOfBrochure</td>
+            <td>@item.VersionNumber</td>
+            <td>@item.DateOfBrochure</td>
+            <td><button onclick='show()' type='submit'class='btn btn-success'>Show</button><button type='button'class='btn btn-danger'>Delete</button></td>
+        </tr>           
+        }
+
+    </tbody>
+</table>
+
+</form>
+</div>
+
+@* <script>
+    var brochureInfo = @Html.Raw(JsonConvert.SerializeObject(ViewBag.BrochureList));
+    
+    var a = "";
+    for(var i=0;i<brochureInfo.length; i++){
+        a += "<tr>";
+        a += "<td><input type='hidden'class='id'style='' name ='id'/></td>";
+        a += "<td>"+ brochureInfo[i].TitleOfBrochure +"</td>";
+        a += "<td>"+ brochureInfo[i].TypeOfBrochure +"</td>";
+        a += "<td>"+ brochureInfo[i].VersionNumber +"</td>";
+        a += "<td>"+ brochureInfo[i].DateOfBrochure +"</td>";
+        a += "<td><button onclick='show()' type='submit'class='btn btn-success'>Show</button><button type='button'class='btn btn-danger'>Delete</button></td>";
+        a += "</tr>";
+    }
+    
+    document.getElementById("partnerbody").innerHTML = a;
+
+    var button = document.getElementsByClassName('btn-success');
+    for(var i=0;i<button.length; i++){
+        button[i].addEventListener('click', function(){
+            console.log(i)
+           document.getElementsByClassName('id')[i].value = i;
+           alert(i);
+           console.log(i);
+           
+        });    
+    }
+    document.getElementsByClassName('btn-warning')[1].addEventListener('click',function(){
+        var x = document.getElementsByClassName('idstaff')[1].value = '123456';
+        alert(x);
+        console.log(x);
+    });
+
+    var staffbutton = document.getElementsByClassName('btn-warning')
+    for(var i=0;i<staffbutton.length; i++){
+        staffbutton[i].addEventListener('click', function(){
+            console.log(i)
+           document.getElementsByClassName('idstaff')[i].value = i;
+           alert(i);
+           console.log(i);
+           
+        }); 
+    }
+        
+</script>*@
+<!--Can not post show button to action method yet-->
+<script>
+    var showbutton = document.getElementsByClassName('btn-success');
+    
+    for(let i=0;i<showbutton.length; i++){
+        console.log([i])
+        showbutton[i].addEventListener('click', function(){
+            console.log(i)
+           document.getElementsByClassName('idstaff')[i].value = i;
+           alert(i);
+           console.log(i);
+        })}; 
+</script>

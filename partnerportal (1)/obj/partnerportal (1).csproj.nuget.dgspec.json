@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ducmy/Downloads/partnerportal (1)-20230611T195611Z-001/partnerportal (1)/partnerportal (1).csproj": {}
+  },
+  "projects": {
+    "/home/ducmy/Downloads/partnerportal (1)-20230611T195611Z-001/partnerportal (1)/partnerportal (1).csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ducmy/Downloads/partnerportal (1)-20230611T195611Z-001/partnerportal (1)/partnerportal (1).csproj",
+        "projectName": "partnerportal (1)",
+        "projectPath": "/home/ducmy/Downloads/partnerportal (1)-20230611T195611Z-001/partnerportal (1)/partnerportal (1).csproj",
+        "packagesPath": "/home/ducmy/.nuget/packages/",
+        "outputPath": "/home/ducmy/Downloads/partnerportal (1)-20230611T195611Z-001/partnerportal (1)/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ducmy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.2, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.2.88, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2291, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/home/ducmy/.dotnet/sdk/6.0.408/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- bootstrap-daterangepicker -->
+    <link href="~/css/daterangepicker.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/custom.min.css" />
+    <!-- Font Awesome -->
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <title>Partner Portal</title>
+
+</head>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="@Url.Action("Index", "Home")" class="site_title"><img style="height:45px"src="~/images/logo.jpg"/></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        @*   <div class="profile_pic">
+                            <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                            </div>*@
+                        <div class="profile_info">
+                            <h3 style="color:white">Welcome</h3>
+                            @*<h2>John Doe</h2>*@
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <div style="display:none"id="userrole">@ViewBag.UserRole</div>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i>Home</a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("PartnerInfomation", "Home")"><i class="fa fa-edit"></i>Partner Infomation</a>
+                                
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SolutionBrochures", "Home")"><i class="fa fa-desktop"></i>Latest Solution Brochures</a>
+                                   
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("SignAgreementRepo", "Home")"><i class="fa fa-table"></i>Signed Agreements Repo</a>
+                                  
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LeadsToCorsiva", "Home")"><i class="fa fa-bar-chart-o"></i>Leads to Corsiva Lab</a>
+                                 
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LeadFromCorsiva", "Home")"><i class="fa fa-clone"></i>Leads from Corsiva Lab</a>
+                                
+                                </li>
+                                 <li id="register">
+                                    <a href="@Url.Action("RegisterPartner", "Account")"><i class="fa fa-clone"></i>Register Partner</a>
+                                
+                                </li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /sidebar menu -->
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-12 col-xl-10" style="margin-right:-20px;float:right;margin-top:60px">
+            <!--render body-->
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+            <!--/render body-->
+        </div>
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                <nav class="nav navbar-nav">
+                    <ul class=" navbar-right">
+                        <li class="nav-item dropdown open" style="padding-left: 15px;">
+                            <a>
+                                <a href="@Url.Action("ChangeNewPassword", "Account")">Change Password</a>
+                            </a>
+                            &emsp;
+                            <a data-toggle="tooltip" data-placement="top" title="Logout" href="@Url.Action("Login", "Account")">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+
+  @*  <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Corsivalab - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/daterangepicker.js"></script>
+    <script src="~/js/custom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+   <script>
+    $(function () {
+            $.getScript("/Home/");
+    });
+    
+    var role = Cookies.get('UserRole');
+    
+    if(role == 'Partner'){
+        document.getElementById('register').style.display = 'none';
+    }
+</script>
+
+
+</body>
+</html>

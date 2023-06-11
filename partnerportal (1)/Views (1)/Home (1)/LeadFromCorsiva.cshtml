@@ -1,0 +1,139 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Leads From Corsiva Page";
+
+}
+@*
+		<!-- Bootstrap Date-Picker Plugin -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>*@
+<style>
+ 
+/* Responsive */
+.hr {
+    height: 2px;
+    margin: 0px;
+    background: #DDDDDD;
+}
+.info ul {
+    display:block;
+}
+.info ul li{
+    list-style:none;
+    float:none;
+
+}
+#addlead{
+    width:70%;
+    margin:auto;
+}
+#addlead fieldset input{
+    border-radius: 5px;
+}
+#addlead button{
+    background-color:rgba(40,57,101,.9);
+    border-radius: 5px;
+}
+
+.form-group-a{
+    width:40%;
+    float:left;
+   
+}
+#datefrom li{
+    list-style:none;
+}
+#containerbody h5{
+    margin:auto;
+}
+</style>
+ <div id="containerbody">
+     <h3>Add Leads</h3>
+     <a href="@Url.Action("UpdateLeadStatus", "Home")"><i class="fa fa-edit"></i>     Update Lead Status</a><br />
+     <h5 style="margin-left:190px;color:green;font-size:23px">@ViewBag.SuccessfullyAddLeads</h5>
+     <h5 style="margin-left:190px;color:green;font-size:23px">@ViewBag.UserRole</h5>
+     <!--Start page-->
+     <form id="addlead" asp-action="LeadFromCorsivaAction" asp-controller="Home" method="post">
+     <br />
+        <fieldset class="form-group">
+            <input type="text" class="form-control" id="formGroupInput1" name="CustomerName"placeholder="Customer Name" required>
+        </fieldset><br />
+        <fieldset class="form-group">
+            <input type="text" class="form-control" id="formGroupInput2" name="CustomerEmail"placeholder="Customer Email" required>
+        </fieldset><br />
+        <fieldset class="form-group">
+            <input type="text" class="form-control" id="formGroupInput3" name="CustomerPhone"placeholder="Customer Phone Number" required>
+        </fieldset><br />
+        <fieldset class="form-group">
+            <input type="text" class="form-control" id="formGroupInput4" name="AdditionalRemarks"placeholder="Addition Remarks" required>
+        </fieldset>
+   
+        <fieldset class="form-group-a">
+             <p>Choose Service</p>
+            <input type="text" class="form-control" id="formGroupInput7" name="ServiceRequired"placeholder="Service required" required>
+        </fieldset>
+        <fieldset class="form-group-a">
+            <table class="table">
+   			<ul id="datefrom">
+   			    <li><p>Date Added</p></li>
+     			<li>@*<i class="fa fa-calendar"></i>*@<input type="text" id="timeCheckIn" name="DateAdded"class="form-control" placeholder="dd-mm-yyyy" required/>
+      			</li>
+  			</ul>
+     	</table>
+         </fieldset>
+         <div>
+           <textarea id="remarks" style="width:40%"name="Remarks"placeholder="  Remarks..." style="text-align:left;"rows="2" cols="80" required></textarea>
+         </div>
+         <br />
+         <div style="display:none">
+             <!--Action method send Partner List to View -->
+            @ViewBag.PartnerList
+            <br />
+            <!--Select Partner and send back to actrion method by TempData["PartnerSelected"]-->
+            @ViewBag.PartnerSelected        
+         </div>
+        @{
+            TempData["PartnerSelected"] = ViewBag.PartnerSelected;
+        }
+        <div style= "float:left">
+            <select id="selectPartner" name="selectPartner">
+                
+            </select>
+        </div>
+        <br /><br />
+        <button style="float:left;width:50%"type="submit" id="submit" class="btn btn-success">Submit</button>
+    </form>
+     <!--End Home Page-->
+ </div>
+
+ <script>
+
+      $(document).ready(function () {
+        $('#timeCheckIn').datepicker({
+            format: 'mm-dd-yyyy'
+        });
+    });
+ </script>
+
+
+<script>
+    var parnerInfo = @Html.Raw(JsonConvert.SerializeObject(ViewBag.PartnerList));
+    
+    var a = "";
+    a +="<option>--- Select Partner ---</option>";
+    
+    for(var i=0;i<parnerInfo.length; i++){
+        a += "<option value="+ parnerInfo[i]+ ">" + i + "   :    " + parnerInfo[i] +"</option>";
+    }
+    
+    document.getElementById("selectPartner").innerHTML = a;
+    
+    	var a = document.getElementById('elementId');
+	var submit = document.getElementById('submit');
+	submit.addEventListener('click', function(){
+        console.log(a.value);
+		alert(a.value);
+	});
+
+</script>
+

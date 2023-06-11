@@ -1,0 +1,170 @@
+﻿@model ClmSolutionBrochures
+@{
+    ViewData["Title"] = "SignAgreement Repo";
+
+}
+<!--Jquery lib-->
+<head> 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+</head>
+<style type="text/css">
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    color: black;
+    font-family: 'Lato', sans-serif
+}
+
+h2 {
+    margin: 50px 0
+}
+
+.file-drop-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 450px;
+    max-width: 100%;
+    padding: 25px;
+    border: 1px dashed black;
+    border-radius: 3px;
+    transition: 0.2s
+}
+
+.choose-file-button {
+    flex-shrink: 0;
+    background-color: rgba(40,57,101,.9);
+    color:white;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+    text-transform: uppercase
+}
+
+.file-message {
+    font-size: small;
+    font-weight: 300;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+.dropdown button{
+    font-size:12px !important; 
+    background-color: rgba(40,57,101,.9);
+}
+.dropdown-menu a{
+    border-bottom: 1px solid white;
+    background-color:rgba(40,57,101,.9);
+    color: white;
+}
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle{
+    background-color:rgba(40,57,101,.9) !important;
+    color: white !important;
+}
+
+select.dropdown-list{
+    width:220px;
+    height:28px;
+    background-color:rgba(40,57,101,.9);
+    color:white;
+}
+.container{
+    margin-top:-10px;
+}
+.container input{
+    border-radius: 5px;
+}
+</style>
+
+
+
+<div id="containerbody">
+    <div class="container d-flex justify-content-center mt-100">
+    <div class="row">
+        <form asp-controller="Home" asp-action="UploadSolutionBrochuresAction" method="post" enctype="multipart/form-data">
+             <div class="col-md-12">
+            <h2>FILE UPLOAD</h2>
+            <div class="file-drop-area"> <span class="choose-file-button">Choose files</span> <span class="file-message">or drag and drop files here</span> <input class="file-input" type="file" name="file"multiple>
+                
+            </div>
+            <br /><br />
+            <div>
+                <input type="text" class="form-control" name="TitleOfBrochure"placeholder="Title Of Brochure">
+            </div>
+            <br />
+              <div>
+                <input type="text" class="form-control" name="VersionNumber"placeholder="Version Number" />
+            </div>
+            <br /><br />
+           
+           <div style="float:left">
+                <div style= "background-color:rgba(40,57,101,.9);color :white" class="dropdown">
+                     <select id="elementId"class="dropdown-list" asp-for="TypeOfBrochure">
+                         <option> Type Of Brochure</option>
+                         <option value="1">1 :  Type of brochure 1</option>
+                         <option value="2">2 :  Type of brochure 2</option>
+                     </select>
+                     @* <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" value="type1" href="#">1: Agreement From Corsiva Lab</a>
+                        <a class="dropdown-item" value="type2" href="#">2: Agreement To Corsiva Lab</a>
+                        
+                      </div>*@
+                </div>
+                <div id="showtype"></div>
+            </div>
+            <br />
+            
+            <div class"a" style="display:none;float:left;margin-left:20px">
+			<input style=" margin-top:10px"type="checkbox" name="SoftDelete" checked="checked">
+			<span style="font-size:13px;color:black">&nbsp; SoftDelete</span>
+		    </div>
+            <br />
+            <button id="submit"style="font-size:15px;margin-top:30px;height:30px;width:80px;background-color:rgba(40,57,101,.9);border-radius:5px;color:white"type="submit">Submit</button>
+        </div>
+
+        </form>
+       
+        
+    </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+$(document).on('change', '.file-input', function() {
+
+
+var filesCount = $(this)[0].files.length;
+
+var textbox = $(this).prev();
+
+if (filesCount === 1) {
+var fileName = $(this).val().split('\\').pop();
+textbox.text(fileName);
+} else {
+textbox.text(filesCount + ' files selected');
+}
+});
+
+</script>

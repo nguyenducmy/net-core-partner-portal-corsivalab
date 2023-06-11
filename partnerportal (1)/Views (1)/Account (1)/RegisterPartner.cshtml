@@ -1,0 +1,63 @@
+﻿@using Newtonsoft.Json
+@{
+    ViewData["Title"] = "Leads From Corsiva Page";
+
+}
+@*
+		<!-- Bootstrap Date-Picker Plugin -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>*@
+<style>
+
+#containerbody h5{
+    margin:auto;
+}
+.login-form{
+	width:45%;
+	margin:auto;
+	margin-top:-100px;
+}
+.login-form input{
+	border-radius:5px; 
+}
+</style>
+ <div id="containerbody">
+     <!--Start Home Page-->
+	 <h3>Register Partner</h3>
+     @using (Html.BeginForm("RegisterAction", "Account", FormMethod.Post))
+		{
+<div class="login-wrap">
+	<div class="login-html">
+		<div class="login-form">
+			<h2  style="color:white"><img style="height:100px"src="~/images/logo.jpg"/></h2>
+		<br/>
+		<p style="color: yellow;font-family:arial;font-size:14px;">@ViewBag.message</p>
+		
+	    <input type="text" name="Username" placeholder="Username" class="form-control" aria-describedby="helpId" required>
+		<br/><br/>
+		
+  		<input type="password" name="Password" placeholder="Password" class="form-control" aria-describedby="helpId" required>
+		<br/><br/>
+	
+  		<input type="text" name="Email" placeholder="Email" class="form-control" aria-describedby="helpId" required>
+		<br/><br/>
+		
+  		<input type="text" name="Phone" placeholder="Phone Number" class="form-control" aria-describedby="helpId" required>
+		<br>
+		<div class= "a"style="float:left">
+			<textarea id="remarks" name="Remarks"placeholder="  Remarks..." style="text-align:left;"rows="2" cols="20"></textarea>
+		</div>
+		<div class"a" style="display:none;float:left;margin-left:20px">
+			<input type="checkbox" name="SoftDelete" checked="checked">
+			<span style="font-size:13px;color:white">SoftDelete</span>
+		</div>
+		<br><br><br><br><br>
+		<button type="submit" style="border-radius:30px;width:100%"class="btn btn-primary">Submit</button>
+		<br>
+		
+		</div>
+	</div>
+</div>
+}
+     <!--End Home Page-->
+ </div>

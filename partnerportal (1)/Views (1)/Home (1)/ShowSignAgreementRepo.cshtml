@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Show SignAgreement Repo";
+
+}
+<head> 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+</head>
+
+<style>
+    .nav-md{
+        overflow:hidden;
+    }
+    #containerbody embed{
+        min-height:805px;
+        width:100%;
+        margintop:20px;
+        
+    }
+</style>
+<div id="containerbody">
+    <embed src="@ViewBag.File"/>
+    
+
+</div>
