@@ -57,7 +57,7 @@ namespace partnerportal.Models
             if (!optionsBuilder.IsConfigured)
             {
 
-                optionsBuilder.UseSqlServer("Server=tcp:toolkittpmp.database.windows.net;Database=toolkittpmpsandbox;User ID=toolkittpmp;Password=corsiva_LAB_999;Trusted_Connection=False;Encrypt=True;");
+                optionsBuilder.UseSqlServer("Server=tcp:;Database=;User ID=;Password=;Trusted_Connection=False;Encrypt=True;");
             }
         }
 

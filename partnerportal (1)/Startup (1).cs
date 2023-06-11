@@ -37,7 +37,7 @@ namespace partnerportal
             /*services.AddIdentityCore<ClmPartner>().AddEntityFrameworkStores<toolkittpmpsandboxContext>();*/
 
             services.AddDbContext<toolkittpmpsandboxContext>(options =>
-            options.UseSqlServer("Server=tcp:toolkittpmp.database.windows.net;Database=toolkittpmpsandbox;User ID=toolkittpmp;Password=corsiva_LAB_999;Trusted_Connection=False;Encrypt=True;"));
+            options.UseSqlServer("Server=tcp:;Database=toolkittpmpsandbox;User ID=;Password=;Trusted_Connection=False;Encrypt=True;"));
             services.AddHttpClient();
 
 
